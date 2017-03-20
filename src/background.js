@@ -10,15 +10,15 @@ var vsHelp = require('./vsHelp'); // vsHelp 辅助类
 
 /**
  * 主流程控制类
- * 
+ *
  * @class Background
  */
 class Background {
 
     /**
      * Creates an instance of Background.
-     * 
-     * 
+     *
+     *
      * @memberOf Background
      */
     constructor() {
@@ -28,8 +28,8 @@ class Background {
 
     /**
      *  初始化
-     * 
-     * 
+     *
+     *
      * @memberOf Background
      */
     init() {
@@ -58,9 +58,9 @@ class Background {
 
     /**
      * 是否刚刚安装background插件
-     * 
+     *
      * @returns boolean
-     * 
+     *
      * @memberOf Background
      */
     firstLoad() {
@@ -82,9 +82,9 @@ class Background {
 
     /**
      * 移除旧版本
-     * 
+     *
      * @returns 是否存在旧版本，或者未安装
-     * 
+     *
      * @memberOf Background
      */
     removeOld() {
@@ -103,8 +103,8 @@ class Background {
 
     /**
      * 安装背景图
-     * 
-     * 
+     *
+     *
      * @memberOf Background
      */
     install(firstload) {
@@ -117,7 +117,7 @@ class Background {
             return;
         }
 
-        // 之后到操作有两种：1.初次加载  2.配置文件改变 
+        // 之后到操作有两种：1.初次加载  2.配置文件改变
 
         if (!lastConfig.enabled && !config.enabled) {  // 如果此时仍然为未启用状态，只是修改图片路径
             return;
@@ -137,7 +137,7 @@ class Background {
             arr = config.customImages;
         }
 
-        var content = getCss(arr).replace(/\s*$/, ''); // 去除末尾空白
+        var content = getCss(arr, config).replace(/\s*$/, ''); // 去除末尾空白
 
         var cssContent = fs.readFileSync(vscodePath.cssPath, 'utf-8');
 
@@ -153,8 +153,8 @@ class Background {
 
     /**
      * 卸载背景图
-     * 
-     * 
+     *
+     *
      * @memberOf Background
      */
     uninstall() {

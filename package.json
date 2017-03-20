@@ -26,10 +26,60 @@
             "type": "object",
             "title": "Plugin background config. background 插件配置",
             "properties": {
+                "background.size": {
+                    "type": "string",
+                    "default": "cover",
+                    "description": "background.size 背景图片尺寸，支持 CSS3中 background-size 全部值；"
+                },
+                "background.saturate": {
+                    "type": "number",
+                    "default": 1,
+                    "description": "background.saturate 背景图片饱和度，取值区间：0~10的小数，参考 CSS3中  filter:saturate(...)；"
+                },
+                "background.contrast": {
+                    "type": "number",
+                    "default": 1,
+                    "description": "background.contrast 背景图片对比度，取值区间：0~10的小数，参考 CSS3中  filter:contrast(...)；"
+                },
+                "background.grayscale": {
+                    "type": "number",
+                    "default": 0,
+                    "description": "background.grayscale 背景图片灰度，取值区间：0~1的小数，参考 CSS3中  filter:grayscale(...)；"
+                },
+                "background.animation": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "background.animation 动态背景图片，是否不断是背景图循环渐隐渐显；"
+                },
+                "background.animationDuration": {
+                    "type": "number",
+                    "default": 5,
+                    "description": "background.animationDuration 背景图片动态持续时间；"
+                },
+                "background.textShadow": {
+                    "type": "string",
+                    "default": "0px 0px 0px rgba(0, 0, 0, 0)",
+                    "description": "background.textShadow 代码文字阴影，如果您设置背景图片后文字看不清可以设置文字阴影，参考 CSS3 text-shadow;"
+                },
+                "background.blur": {
+                    "type": "string",
+                    "default": "32px",
+                    "description": "background.blur 背景图片模糊度，支持 CSS3中  filter:blur(...) 全部类型的值；"
+                },
+                "background.opacity": {
+                    "type": "number",
+                    "default": 1,
+                    "description": "background.opacity 背景图片透明度，参考CSS3的opacity；"
+                },
+                "background.brightness": {
+                    "type": "number",
+                    "default": 0.4,
+                    "description": "background.brightness 背景图片明度，取值区间：0~1；参考 CSS3：filter:brightness()；"
+                },
                 "background.enabled": {
                     "type": "boolean",
                     "default": true,
-                    "description": "Plugin background enabled.background 插件是否启用"
+                    "description": "background.enabled 插件是否启用"
                 },
                 "background.useDefault": {
                     "type": "boolean",
